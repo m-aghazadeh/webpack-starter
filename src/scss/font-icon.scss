@@ -1,0 +1,21 @@
+@font-face {font-family: "pg";
+  src: url('/src/assets/fonts/pg-icons/pg.eot?t=1671305124339'); /* IE9*/
+  src: url('/src/assets/fonts/pg-icons/pg.eot?t=1671305124339#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("/src/assets/fonts/pg-icons/pg.woff2?t=1671305124339") format("woff2"),
+  url("/src/assets/fonts/pg-icons/pg.woff?t=1671305124339") format("woff"),
+  url('/src/assets/fonts/pg-icons/pg.ttf?t=1671305124339') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('/src/assets/fonts/pg-icons/pg.svg?t=1671305124339#pg') format('svg'); /* iOS 4.1- */
+}
+
+[class^="pg-"], [class*=" pg-"] {
+  font-family: 'pg' !important;
+  font-size: 1.2rem;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pg-b-call:before { content: "\ea01"; }
+
+$pg-b-call: "\ea01";
+

@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'noora-fn';
+  src: url('/src/assets/fonts/noora-fn/noora-black.eot');
+  src: url('/src/assets/fonts/noora-fn/noora-black.eot?#iefix') format('embedded-opentype'),
+  url('/src/assets/fonts/noora-fn/noora-black.woff2') format('woff2'),
+  url('/src/assets/fonts/noora-fn/noora-black.woff') format('woff'),
+  url('/src/assets/fonts/noora-fn/noora-black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'noora-fn';
+  src: url('/src/assets/fonts/noora-fn/noora-extrabold.eot');
+  src: url('/src/assets/fonts/noora-fn/noora-extrabold.eot?#iefix') format('embedded-opentype'),
+  url('/src/assets/fonts/noora-fn/noora-extrabold.woff2') format('woff2'),
+  url('/src/assets/fonts/noora-fn/noora-extrabold.woff') format('woff'),
+  url('/src/assets/fonts/noora-fn/noora-extrabold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'noora-fn';
+  src: url('/src/assets/fonts/noora-fn/noora-bold.eot');
+  src: url('/src/assets/fonts/noora-fn/noora-bold.eot?#iefix') format('embedded-opentype'),
+  url('/src/assets/fonts/noora-fn/noora-bold.woff2') format('woff2'),
+  url('/src/assets/fonts/noora-fn/noora-bold.woff') format('woff'),
+  url('/src/assets/fonts/noora-fn/noora-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'noora-fn';
+  src: url('/src/assets/fonts/noora-fn/noora-extralight.eot');
+  src: url('/src/assets/fonts/noora-fn/noora-extralight.eot?#iefix') format('embedded-opentype'),
+  url('/src/assets/fonts/noora-fn/noora-extralight.woff2') format('woff2'),
+  url('/src/assets/fonts/noora-fn/noora-extralight.woff') format('woff'),
+  url('/src/assets/fonts/noora-fn/noora-extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'noora-fn';
+  src: url('/src/assets/fonts/noora-fn/noora-light.eot');
+  src: url('/src/assets/fonts/noora-fn/noora-light.eot?#iefix') format('embedded-opentype'),
+  url('/src/assets/fonts/noora-fn/noora-light.woff2') format('woff2'),
+  url('/src/assets/fonts/noora-fn/noora-light.woff') format('woff'),
+  url('/src/assets/fonts/noora-fn/noora-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'noora-fn';
+  src: url('/src/assets/fonts/noora-fn/noora-regular.eot');
+  src: url('/src/assets/fonts/noora-fn/noora-regular.eot?#iefix') format('embedded-opentype'),
+  url('/src/assets/fonts/noora-fn/noora-regular.woff2') format('woff2'),
+  url('/src/assets/fonts/noora-fn/noora-regular.woff') format('woff'),
+  url('/src/assets/fonts/noora-fn/noora-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

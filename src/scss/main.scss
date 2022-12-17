@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+@import "mixins";
+@import "font-icon";
+@import "fonts";
+@import "themes";
+@import "normalize";
+
+@import "utilities";
+
+@layer components {
+  //iconsax utility classes
+  @import "./widgets";
+}

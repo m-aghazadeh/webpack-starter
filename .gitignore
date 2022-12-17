@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+.env
+dist
+.idea
+yarn.lock
+src/assets/fonts/pg-icons
