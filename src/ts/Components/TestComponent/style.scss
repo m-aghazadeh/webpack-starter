@@ -2,7 +2,7 @@
 
 .test_component {
   direction: ltr;
-  @apply shadow-md rounded-md bg-red-800 w-max mx-auto mt-12 p-14 font-sans;
+  @apply shadow-xl rounded-md bg-red-800 w-max mx-auto mt-12 p-14 font-sans;
   &:hover {
     @apply bg-red-700;
   }

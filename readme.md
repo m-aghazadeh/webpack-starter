@@ -1,4 +1,4 @@
-# Iranmehr front-end
+# Webpack Starter
 
 ## Setup
 
@@ -32,7 +32,6 @@ yarn run wp-prod
 Assets bundler : [webpack](https://webpack.js.org/)
 
 Css freamwork : [tailwind](https://tailwindcss.com/)
-
 
 ## Folder structure
 
