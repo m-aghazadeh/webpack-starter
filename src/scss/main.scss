@@ -4,14 +4,27 @@
 @tailwind screens;
 
 @import "mixins";
-@import "font-icon";
 @import "fonts";
 @import "themes";
 @import "normalize";
+@layer base {
+  * {
+    letter-spacing: -0.04em;
+  }
+
+  .input {
+    @apply focus:placeholder-transparent placeholder-neutral-600 py-3 px-4 bg-transparent;
+    @apply border-2 border-neutral-300 bg-white rounded-full text-sm focus-within:border-primary;
+  }
+}
 
 @import "utilities";
 
 @layer components {
   //iconsax utility classes
-  @import "./widgets";
+  @import "./components/buttons";
+  @import "./components/inputs";
 }
+
+@import "font-icon";
+@import "./widgets";

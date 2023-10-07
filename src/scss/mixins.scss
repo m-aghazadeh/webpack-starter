@@ -2,7 +2,7 @@
   all: unset;
   -webkit-appearance: none;
 
-  @apply w-10 h-6 inline-flex relative rounded-10 bg-nat-400 transition-all;
+  @apply w-10 h-6 inline-flex relative rounded-10 bg-neutral-400 transition-all;
 
   &:before {
     content: "";
@@ -18,6 +18,6 @@
 }
 
 @mixin noramal-input {
-  @apply focus:placeholder-transparent placeholder-nat-600 py-3 px-5 bg-transparent;
-  @apply border-2 border-nat-300 bg-white rounded-10 text-sm focus-within:border-primary;
+  @apply focus:placeholder-transparent placeholder-neutral-600 py-3 px-5 bg-transparent;
+  @apply border-2 border-neutral-300 bg-white rounded-10 text-sm focus-within:border-primary;
 }

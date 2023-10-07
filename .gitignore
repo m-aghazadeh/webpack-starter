@@ -5,3 +5,4 @@ dist
 .idea
 yarn.lock
 src/assets/fonts/pg-icons
+yarn-error.log

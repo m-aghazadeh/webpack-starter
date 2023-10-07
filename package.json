@@ -3,6 +3,7 @@
   "license": "MIT",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "main": "src/ts/pages/Index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,7 +16,7 @@
   "dependencies": {
     "jquery": "^3.6.1",
     "jquery-ui": "^1.13.2",
-    "swiper": "^8.3.2"
+    "mat-ripple": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
@@ -32,7 +33,10 @@
     "css-minimizer-webpack-plugin": "^4.0.0",
     "cssnano": "^5.1.13",
     "cssnano-preset-advanced": "^5.3.8",
-    "dotenv": "^16.0.1",
+    "dotenv": "^16.3.1",
+    "ejs-compiled-loader": "^3.1.0",
+    "ejs-loader": "^0.5.0",
+    "ejs-webpack-loader": "^2.2.2",
     "file-loader": "^6.2.0",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",

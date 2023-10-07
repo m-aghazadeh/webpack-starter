@@ -1,1 +1,0 @@
-import '../assets/img/test-asset.svg';

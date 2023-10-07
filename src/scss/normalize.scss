@@ -1,23 +1,18 @@
 * {
   -webkit-tap-highlight-color: transparent;
-  @apply font-sans;
+  @apply font-yekanbakh;
 
   &:before, &:after {
     @apply inline-block;
   }
-
 }
 
 ::selection {
-  @apply text-nat-100 bg-primary-400;
-}
-
-::-moz-selection {
-
+  @apply text-white bg-primary-700;
 }
 
 html, body {
-  @apply w-full text-base overflow-x-visible;
+  @apply w-full text-base overflow-x-visible bg-[#F5F5F5];
   scroll-behavior: smooth;
 }
 
@@ -34,40 +29,53 @@ span, img, strong {
 }
 
 //  HEADINGS
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   @apply font-black;
+  line-height: normal;
+
+}
+
+h3, h4, h5, h6 {
+  @apply font-bold;
+  line-height: normal;
+
 }
 
 h1 {
-  font-size: 1.45rem;
+  font-size: 55px;
 }
 
 h2 {
-  font-size: 1.35rem;
+  font-size: 38px;
 }
 
 h3 {
-  font-size: 1.30rem;
+  font-size: 24px;
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: 22px;
 }
 
-h5 {
-  font-size: 1.20rem;
+h5, h6 {
+  font-size: 20px;
 }
 
-h6 {
-  font-size: 1.18rem;
-}
+input[type="number"] {
+  @apply appearance-none text-left;
+  -moz-appearance: textfield;
+  direction: ltr;
 
-input[type="text"], input[type="search"], input[type="email"], textarea {
-  @apply appearance-none outline-none w-full;
-}
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-input[type="button"], button {
-  @apply py-1 px-4 bg-nat-100 hover:bg-gray-100;
+  &::placeholder {
+    @apply text-right;
+    direction: rtl;
+  }
 }
 
 .xdebug-var-dump, .xdebug-error {
@@ -77,107 +85,6 @@ input[type="button"], button {
 }
 
 
-@media (min-width: theme('screens.sm')) {
-  /* custom scrollbar */
-  &::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-    background: transparent;
+@import "components/content";
 
-  }
 
-  &::-webkit-scrollbar-track {
-    background-color: #fff0;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #d6dee1;
-    border-radius: 20px;
-    border: 1px solid transparent;
-    background-clip: content-box;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: #a8bbbf;
-  }
-}
-
-.im_main_content {
-  h2, h3, h4, h5, h6 {
-    @apply font-black mt-4 mb-2 text-right text-black;
-  }
-
-  p {
-    @apply block text-right;
-  }
-
-  .aligncenter {
-    @apply block mx-auto;
-  }
-
-  font-weight: 400;
-  font-size: 15px;
-  text-transform: none;
-  color: #7b7b7b;
-  text-align: justify;
-
-  .wp-caption {
-    @apply max-w-full;
-    width: 100% !important;
-  }
-
-  img, video {
-    @apply max-w-full h-auto object-cover mx-auto my-2 rounded-3xl;
-  }
-
-  a:not(.btn-success) {
-    color: #32b4fd;
-    @apply hover:underline;
-
-    &:active, &:hover {
-      @apply text-purple-500 text-[#23527c];
-    }
-  }
-
-  ol, ul {
-    @apply list-disc list-inside mx-2;
-  }
-
-  ul {
-    @apply list-disc;
-  }
-
-  li {
-    h2, h3, h4, h5, h6 {
-      @apply inline;
-    }
-  }
-
-  ol {
-    @apply list-decimal;
-  }
-
-  table {
-    @apply my-2 block overflow-x-auto max-w-full;
-    height: auto !important;
-
-    tbody {
-      border: 1px solid #0000001f;
-      display: table;
-      border-spacing: 5px;
-      padding: 10px;
-      overflow: hidden;
-      width: 100%;
-
-      tr:nth-child(odd) {
-        background: #2e61ff0d;
-      }
-
-      td {
-        margin: 10px;
-        padding: 10px 14px;
-        border: 1px solid #0000001f;
-      }
-    }
-  }
-}

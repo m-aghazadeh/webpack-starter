@@ -1,4 +1,5 @@
-import TestComponent from "../Components/TestComponent";
+import AralanSelect from "../libraries/aralan-select";
+import Ripple from '../Components/Ripple';
 
 export default abstract class BasePage {
     name: string;
@@ -15,12 +16,13 @@ export default abstract class BasePage {
             window.$ = jQuery.noConflict();
         });
 
-        // @ts-ignore
         console.log(`platform ${this.constructor?.name || ''} page loaded...`);
 
 
         window.addEventListener('load', () => {
-            const testComponent = new TestComponent();
+            const aralanSelect = new AralanSelect();
+            const ripple = new Ripple();
+
         });
     }
 

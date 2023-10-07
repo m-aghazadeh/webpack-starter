@@ -1,19 +1,29 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackMessages = require('webpack-messages');
+import path from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import WebpackMessages from 'webpack-messages';
+import {configDotenv} from "dotenv";
+import autoprefixer from 'autoprefixer';
+import {getEntries, getPlugins} from './entries.js'
+import {fileURLToPath} from 'url';
 
-require('dotenv').config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-module.exports = {
-    entry: {
-        'index': path.resolve(__dirname, '../src/ts/pages/Index.ts'),
-    },
+configDotenv()
+
+const plugins = await getPlugins();
+const entries = await getEntries();
+console.log(plugins)
+export default {
+    entry: {...entries},
     output: {
         path: path.resolve(__dirname, "../dist"),
         clean: true,
     },
-    stats: 'errors-only',
+    stats: {
+        children: true,
+    },
     resolve: {
         extensions: ['.ts', '.js'],
     },
@@ -40,10 +50,10 @@ module.exports = {
                 include: path.resolve(__dirname, '../src'),
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
             },
-            {
-                test: /\.html$/i,
-                loader: 'html-loader',
-            },
+            // {
+            //     test: /\.html$/i,
+            //     loader: 'html-loader',
+            // },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
@@ -51,6 +61,7 @@ module.exports = {
                     filename: './fonts/[name][ext]',
                 },
             },
+            {test: /\.ejs$/, loader: 'ejs-loader'},
             {
                 test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
                 type: "asset/resource",
@@ -62,28 +73,18 @@ module.exports = {
         ],
     },
     plugins: [
-        //home is home.html in /src folder and index is index entry in this webpack config.
-        hthmlWebpackPlugin('home', ['index']),
-        require('autoprefixer'),
+        autoprefixer,
         new WebpackMessages({
             name: 'client',
             logger: str => {
                 console.log(str);
             }
         }),
+
+        ...plugins
+        // ...plugins
+        // getPlugins().map((item) => {
+        //     return new HtmlWebpackPlugin(item)
+        // })
     ],
 };
-
-function hthmlWebpackPlugin(fileName, chunks) {
-    return new HtmlWebpackPlugin({
-        filename: `${fileName}.html`,
-        template: `./src/${fileName}.html`,
-        chunks,
-        minify: {
-            removeComments: true,
-            collapseWhitespace: true,
-            removeRedundantAttributes: false,
-            removeAttributeQuotes: true
-        },
-    })
-}

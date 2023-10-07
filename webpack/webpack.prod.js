@@ -4,6 +4,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const {merge} = require('webpack-merge');
 const common = require('./webpack.common');
+const path = require("path");
 module.exports = merge(common, {
     mode: 'production',
     entry: {
@@ -11,10 +12,11 @@ module.exports = merge(common, {
     },
     output: {
         filename: "js/[name].[hash].min.js",
+        publicPath: path.join(__dirname, '../dist')
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'css/[name].[hash].min.css'
+            filename: './css/[name].[hash].min.css'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',

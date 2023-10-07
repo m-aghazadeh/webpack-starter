@@ -1,0 +1,119 @@
+// Variables
+$input_height: 42px;
+$border_radius: 6px;
+$gray_light: #eee;
+$gray_lighter: #f6f6f6;
+
+
+// Hide native dropdown
+.main-theme {
+  select {
+    display: none !important;
+  }
+
+  // Styles
+  .dropdown {
+    @apply box-border cursor-pointer flex text-lg border border-neutral-100;
+    position: relative;
+    transition: all 0.1s ease-in-out;
+    user-select: none;
+
+    &.disabled {
+      @apply pointer-events-none opacity-50;
+      background: var(--neutral-neutral-50, #F3F3F3);
+    }
+
+    &.multiple {
+      .checkbox {
+        @apply w-5 h-5 rounded-1.5 border shrink-0 inline-flex relative transition-all;
+        &:before {
+          content: "";
+          @apply absolute rotate-45 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-transparent transition-colors;
+        }
+      }
+
+      .option.selected {
+        .checkbox {
+          @apply bg-primary;
+          &:before {
+            @apply h-3 w-1.5 border-r-2 border-b-2 border-white;
+          }
+        }
+      }
+    }
+
+    .current-selection {
+      padding: theme('spacing.4') theme('spacing.[4.5]');
+
+      @apply flex items-center justify-center relative max-w-full w-full gap-6;
+      .title {
+        @apply text-xs mb-1;
+      }
+
+      .current {
+        @apply font-bold whitespace-nowrap overflow-ellipsis overflow-hidden;
+      }
+
+      .dropdown-icon {
+        height: max-content;
+        transition: all 0.1s ease-in-out;
+
+        transform: rotate(90deg);
+      }
+    }
+
+    &.open {
+      @apply outline-4 outline outline-neutral-150;
+      .dropdown-icon {
+        transform: rotate(0deg);
+      }
+
+      .list {
+        transform: scale(1);
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .option {
+        cursor: pointer;
+      }
+    }
+
+    &.wide {
+      width: 100%;
+
+      .list {
+        left: 0 !important;
+        right: 0 !important;
+      }
+    }
+
+    .list {
+      @apply bg-white mt-4 px-4 opacity-0 overflow-hidden absolute top-full min-w-max;
+      @apply w-full right-0 left-0 mx-auto invisible;
+      transition: all .15s;
+      transform: scale(.75);
+      transform-origin: top center;
+      z-index: 999;
+      box-shadow: 0 11px 56px 0 rgba(0, 0, 0, 0.04);
+
+      ul {
+        @apply max-h-70 overflow-y-auto flex flex-col gap-2.5;
+      }
+    }
+
+    .option {
+      padding: theme('spacing.2') theme('spacing.4');
+      @apply flex items-center gap-2 text-base;
+
+      &:hover {
+        @apply bg-neutral-50;
+      }
+
+      &.selected {
+        @extend :hover;
+      }
+    }
+  }
+}

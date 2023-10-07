@@ -1,0 +1,61 @@
+@import "/src/scss/fonticon-variables";
+
+
+.rank-math-block, .wp-block-rank-math-faq-block {
+  .rank-math-list-item, .rank-math-faq-item {
+
+    .rank-math-question {
+      font-size: 16px;
+      line-height: normal;
+      @apply lg:text-2xl lg:font-semibold;
+
+      /* shadow blog s */
+
+      @apply p-4;
+      @apply w-full h-full items-center flex cursor-pointer  justify-start;
+
+      &:after {
+        @apply relative font-normal flex items-center justify-center text-xl p-4 mr-auto;
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+
+        content: '#{$o-arrow-left-2}';
+        font-family: 'pg';
+        @apply font-light not-italic  transition-transform;
+        @apply lg:text-4xl;
+
+      }
+    }
+
+    .rank-math-answer {
+      @apply hidden w-full text-right font-light mt-4 px-4 pb-4;
+      font-size: 16px;
+      line-height: 130%;
+
+      @apply lg:text-base lg:font-normal;
+    }
+
+    &.open {
+      @apply bg-white;
+      .rank-math-question {
+
+        &:after {
+          @apply -rotate-90;
+        }
+      }
+    }
+
+
+  }
+}
+
+
+@keyframes display-down {
+  from {
+    display: none;
+    transform: scaleY(.4);
+    transform-origin: top;
+  }
+  to {
+    @apply flex scale-y-100;
+  }
+}

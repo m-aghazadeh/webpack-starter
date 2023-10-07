@@ -1,10 +1,15 @@
-const path = require('path');
-const webpack = require('webpack');
-const common = require('./webpack.common');
-const {merge} = require('webpack-merge');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+import path from "path";
+import webpack from 'webpack';
+import common from './webpack.common.js';
+import {merge} from 'webpack-merge';
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT;
-module.exports = merge(common, {
+console.log(path.join(__dirname, "../"))
+export default merge(common, {
     mode: 'development',
     entry: {
         'jquery': '/node_modules/jquery',
@@ -20,6 +25,9 @@ module.exports = merge(common, {
             },
             {
                 directory: path.join(__dirname, "../src")
+            },
+            {
+                directory: path.join(__dirname, "../")
             }
         ],
         compress: false,

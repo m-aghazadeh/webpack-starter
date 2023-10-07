@@ -1,0 +1,165 @@
+.content {
+  h2, h3, h4, h5, h6 {
+    @apply font-normal  text-right text-neutral;
+  }
+
+  h2, h3, h4, h5, h6 {
+    @apply mt-5;
+  }
+
+  h2 {
+    @apply text-8/12.5 mb-4 lg:mt-11 lg:mb-5;
+
+    + h3 {
+      @apply mt-0;
+    }
+  }
+
+  h3 {
+    @apply mb-3 text-2xl;
+    @apply lg:mb-4;
+
+    &:not(.no-bullet) {
+      &:before {
+        content: "●";
+        @apply text-sec ml-2;
+      }
+    }
+  }
+
+  h4 {
+    @apply mb-3 text-xl;
+    @apply lg:mb-4;
+  }
+
+  h5, h6 {
+    @apply mb-3 text-lg;
+    @apply lg:mb-4;
+  }
+
+  p {
+    @apply block text-justify text-base/10;
+  }
+
+  .aligncenter {
+    @apply block mx-auto;
+  }
+
+  @apply text-neutral;
+
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: none;
+  text-align: justify;
+
+  .wp-caption {
+    @apply max-w-full;
+    width: 100% !important;
+  }
+
+  img, video {
+    @apply max-w-full h-auto object-cover mx-auto my-2;
+  }
+
+  a:not(.btn) {
+    @apply hover:underline text-sec;
+  }
+
+  ol, ul {
+    @apply list-disc list-inside mx-2;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  li {
+    h2, h3, h4, h5, h6 {
+      @apply inline;
+    }
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  /*
+    table {
+      @apply my-2 w-full overflow-x-auto max-w-full;
+      height: auto !important;
+
+      tbody, thead, tfoot {
+        border: 1px solid #0000001f;
+        border-spacing: 5px;
+        padding: 10px;
+        overflow: hidden;
+        width: 100%;
+
+        tr:nth-child(odd) {
+          background: #2e61ff0d;
+        }
+
+        td, th {
+          margin: 10px;
+          padding: 10px 14px;
+          border: 1px solid #0000001f;
+        }
+      }
+
+
+    }
+
+  */
+
+  table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    @apply w-full max-w-full;
+
+    thead tr {
+      @apply bg-sec;
+      color: #ffffff;
+    }
+
+    td, th {
+      padding: 12px 15px;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+
+    tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+
+    tbody tr:last-of-type {
+      border-bottom: 2px solid theme('colors.sec.500');
+    }
+
+    tr.active-row {
+      font-weight: bold;
+      color: theme('colors.sec.500');
+    }
+  }
+
+  .titles {
+    @apply gap-10 grid my-8;
+
+    &.titles {
+      &-2 {
+        @apply lg:grid-cols-2;
+      }
+
+      &-3 {
+        @apply lg:grid-cols-3;
+      }
+
+      .title_box {
+        @apply bg-primary p-3 rounded-3 text-center text-white;
+      }
+    }
+  }
+}

@@ -9,7 +9,6 @@ export class App {
 
     init = () => {
         window.addEventListener('load', () => {
-            // @ts-ignore
             (function (jQuery) {
                 // @ts-ignore
                 window.$ = jQuery.noConflict();

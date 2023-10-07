@@ -1,0 +1,15 @@
+.pagination {
+  direction: ltr;
+  @apply flex items-center justify-center w-full flex-wrap gap-2 lg:gap-6;
+  .page-numbers:not(.dots) {
+    @apply btn rounded-3 bg-[#F9F9F9] w-8.5 h-8.5 flex items-center justify-center px-0 py-0 text-sm lg:w-12.5 lg:h-12.5 lg:text-base;
+    &.current {
+      @apply bg-primary text-white;
+    }
+
+    .next, .prev {
+      @apply flex-shrink-0;
+    }
+
+  }
+}

@@ -1,0 +1,111 @@
+.btn {
+  @apply cursor-pointer rounded-none h-auto  bg-transparent outline outline-0 border border-transparent  inline-flex gap-2 items-center justify-center font-normal px-8 py-4 transition-colors whitespace-nowrap;
+  transition: outline-width 0.1s;
+  font-size: 18px;
+  line-height: normal;
+
+  i {
+    line-height: .9609;
+    font-size: 1.562rem;
+    font-weight: normal;
+  }
+
+  svg {
+    @apply w-6 h-6;
+  }
+
+  &:active {
+    @apply outline-4;
+  }
+
+  &:disabled, &.disabled, &.swiper-button-disabled {
+    @apply bg-neutral-50 border border-neutral-100 text-neutral-500 pointer-events-none;
+  }
+
+  &.only-icon {
+    @apply p-4.5 ;
+    svg {
+      @apply w-full h-full;
+    }
+  }
+
+  &.loading {
+    @apply pointer-events-none;
+    &:before {
+      content: "";
+      background: inherit;
+      z-index: 40;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 50;
+      width: 24px;
+      height: 24px;
+      border: 2px solid #FFF;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+.btn-primary {
+  @apply bg-primary text-white;
+  &:hover {
+    @apply bg-primary-800;
+  }
+
+  &:active {
+    @apply outline-primary-150;
+  }
+}
+
+.btn-neutral-outline {
+  @apply bg-white text-black border border-neutral-100;
+  &:hover {
+    @apply border-neutral-300
+  }
+
+  &:active {
+    @apply outline-neutral-150;
+  }
+}
+
+.btn-secoundry {
+  @apply bg-sec text-white;
+  &:hover {
+    @apply bg-sec-600;
+  }
+}
+
+.btn-sm {
+  @apply px-4.5 py-2.5;
+  font-size: 14px;
+  line-height: 22px;
+
+  i {
+    font-size: 1.302rem;
+  }
+
+  &.only-icon {
+    padding: 10px;
+    @apply w-12 h-12;
+  }
+}
