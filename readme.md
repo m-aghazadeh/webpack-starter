@@ -104,16 +104,3 @@ Project files
 This is an example of how your project's folder structure might look, along with the added image for reference.
 
 Feel free to customize and expand this README as needed for your project.
-
-
-## Author
-
-**Author Name**: John Doe
-**Email**: john.doe@example.com
-
-John Doe is a web developer with a passion for open-source projects and front-end development. He enjoys creating useful tools and resources for the developer community.
-
-**Social Links**:
-- [GitHub](https://github.com/m-aghazadeh)
-- [Twitter](https://twitter.com/mmd.aghazadeh)
-- [LinkedIn](https://www.linkedin.com/in/johndoe)
